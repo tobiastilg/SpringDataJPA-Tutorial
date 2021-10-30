@@ -34,7 +34,7 @@ public class Student {
     @Column(name = "email_address", //Spaltenname mitgeben (sollte bei jedem datenfeld gemacht werden)
             nullable = false) //darf nicht null sein
     private String emailId;
-    private String guardianName;
-    private String guardianEmail;
-    private String guardianMobile;
+
+    @Embedded //übernimmt die Eigenschaften aus Guardian durch @AttributeOverrides
+    private Guardian guardian;
 }
