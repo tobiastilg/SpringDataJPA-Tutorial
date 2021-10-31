@@ -57,4 +57,58 @@ class StudentRepositoryTest {
         List<Student> studentList = studentRepository.findAll();
         System.out.println("studentList = " + studentList);
     }
+
+    @Test
+    public void printStudentByFirstName(){
+        List<Student> students = studentRepository.findByFirstName("Fritz");
+
+        System.out.println("students = " + students);
+    }
+
+    @Test
+    public void printStudentByFirstNameContaining(){
+        List<Student> students = studentRepository.findByFirstNameContaining("tz");
+
+        System.out.println("students = " + students);
+    }
+
+    @Test
+    public void printStudentBasedOnGuardianName(){
+        List<Student> students = studentRepository.findByGuardianName("Peter");
+
+        System.out.println("students = " + students);
+    }
+
+    @Test
+    public void printgetStudentByEmailAddress(){
+        Student student = studentRepository.getStudentByEmailAddress("hans@gmail.com");
+
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void printgetStudentFirstNameByEmailAddress(){
+        String firstName = studentRepository.getStudentFirstNameByEmailAddress("hans@gmail.com");
+
+        System.out.println("firstName = " + firstName);
+    }
+
+    @Test
+    public void printgetStudentByEmailAddressNative(){
+        Student student = studentRepository.getStudentByEmailAddressNative("hans@gmail.com");
+
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void printgetStudentByEmailAddressNativeNamedParam(){
+        Student student = studentRepository.getStudentByEmailAddressNativeNamedParam("hans@gmail.com");
+
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void updateStudentNameByEmailIdTest(){
+        studentRepository.updateStudentNameByEmailId("Hubert", "hans@gmail.com");
+    }
 }
