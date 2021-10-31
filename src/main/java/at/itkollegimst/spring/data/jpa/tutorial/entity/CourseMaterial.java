@@ -22,7 +22,8 @@ public class CourseMaterial {
     private Long courseMaterialId;
     private String url;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) //mapping
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false) //mapping
+    //(CascadeType.ALL erstellt die Elemente für einen Befehl, falls diese noch nicht in der DB gespeichert sind
     @JoinColumn(name = "course_id", referencedColumnName = "courseId") //Referenz (Datenfeld - Spalte)
     private Course course;
 

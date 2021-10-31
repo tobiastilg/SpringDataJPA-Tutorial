@@ -11,30 +11,30 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class CourseRepositoryTest {
+class TeacherRepositoryTest {
 
     @Autowired
-    private CourseRepository courseRepository;
+    private TeacherRepository teacherRepository;
 
     @Test
-    public void printCourses() {
-        List<Course> courses = courseRepository.findAll();
-        System.out.println("courses = " + courses);
-    }
+    public void saveTeacher() {
 
-    @Test
-    public void saveCourseWithTeacher() {
+        Course courseDBA = Course.builder()
+                .title("DBA")
+                .credit(5)
+                .build();
+
+        Course courseJava = Course.builder()
+                .title("Java")
+                .credit(6)
+                .build();
+
         Teacher teacher = Teacher.builder()
                 .firstName("Dominik")
-                .lastName("Moser")
+                .lastName("Neuner")
+                //.courses(List.of(courseDBA, courseJava))
                 .build();
 
-        Course course = Course.builder()
-                .title("Python")
-                .credit(6)
-                .teacher(teacher)
-                .build();
-
-        courseRepository.save(course);
+        teacherRepository.save(teacher);
     }
 }
