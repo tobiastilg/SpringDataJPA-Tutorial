@@ -2,6 +2,17 @@
 
 Vertiefung von Spring Boot JPA (Data Access)
 
+- [Spring Data JPA Tutorial](#spring-data-jpa-tutorial)
+    - [JPA](#jpa)
+    - [Datenbankanbindung](#datenbankanbindung)
+    - [Repositories](#repositories)
+    - [Objekte ohne Tabelle](#objekte-ohne-tabelle)
+- [Relationships](#relationships)
+    - [One-To-One](#one-to-one)
+    - [One-To-Many](#one-to-many)
+        - [Many-To-One](#many-to-one)
+    - [Many-To-Many](#many-to-many)
+    
 ## JPA
 
 __JDBC__ ist eine von Java bereitgestellte API (Datenbakschnittstelle). Da Datenbanken aber mit Tabellen und Java mit Objekten (Klassen) arbeitet, müsste man die Daten aus der Datenbank lesen und in Objekte umwandeln.
