@@ -21,7 +21,7 @@ __ORM__ (Object Relationship Mapping) ist, wie es der Name schon verrät, die Fu
 
 Die unterschiedlichen Frameworks bieten unterschiedliche Implementierungen, weshalb das Wechseln eines Frameworks in einer Applikation recht schwierig und zeitaufwendig sein kann. Deshalb gibt es Standardspezifikationen, die die API Anbieter verwenden, um den Programmierern, die das Framework nutzen, einen Austausch wesentlich einfacher zu ermöglichen.
 
-Die Standardspezifikation von Java nennt sich __JPA__ (Java Persistence API) und ermöglicht ein entwicklerfreundlichen Benutzen und Austauschen von __ORM__ Implementierungen. Wichitg zu verstehen ist, JPA kann man nur in Verbindung mit einem ORM-Framework verwenden, JPA stellt nur die Spezifikation bereit.
+Die Standardspezifikation von Java nennt sich __JPA__ (Java Persistence API) und ermöglicht ein entwicklerfreundliches Benutzen und Austauschen von __ORM__ Implementierungen. Wichitg zu verstehen ist, JPA kann man nur in Verbindung mit einem ORM-Framework verwenden, JPA stellt nur die Spezifikation bereit.
 
 ## Datenbankanbindung
 
@@ -37,7 +37,7 @@ Repositories sind dazu da, zwischen der Datenbank und der Applikation zu kommuni
 
 Durch die JPA Spezifikationen müsen die Mehtoden in Repos nur Keywords entsprechen, damit automatisch eine Implementierung zur Verfügung gestellt werden kann (siehe Doku: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation).
 
-Ist es aber nicht möglich eine automatische Methodenimplementierung durch die Keywords zu erzeugen, dann muss die Query selbst geschrieben werden. Mit der `@Query` Notation kann eine JPQL Query mitgegeben werden. JPQL bezieht sich, im Gegensatz zu SQL, nicht auf Tabellen und Spalten(namen) sondern auf Klassen und Attribute (Datenfelder).
+Ist es aber nicht möglich eine automatische Methodenimplementierung durch die Keywords zu erzeugen, dann muss die Query selbst geschrieben werden. Mit der `@Query` Notation kann eine JPQL Query mitgegeben werden. JPQL bezieht sich, im Gegensatz zu SQL, nicht auf Tabellen und Spalten(namen), sondern auf Klassen und Attribute (Datenfelder).
 
 ```java
 @Query("select s from Student s where s.emailId = ?1")
